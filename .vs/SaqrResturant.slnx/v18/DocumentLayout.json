@@ -3,19 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\M\\source\\repos\\SaqrResturant\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/SaqrDB/True/SqlTable/dbo.Inbox.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A4EBCF51-AF22-EAF0-861B-F3BDECF0B913}|SaqrResturant.csproj|c:\\users\\m\\source\\repos\\saqrresturant\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A4EBCF51-AF22-EAF0-861B-F3BDECF0B913}|SaqrResturant.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A4EBCF51-AF22-EAF0-861B-F3BDECF0B913}|SaqrResturant.csproj|c:\\users\\m\\source\\repos\\saqrresturant\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A4EBCF51-AF22-EAF0-861B-F3BDECF0B913}|SaqrResturant.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A4EBCF51-AF22-EAF0-861B-F3BDECF0B913}|SaqrResturant.csproj|c:\\users\\m\\source\\repos\\saqrresturant\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A4EBCF51-AF22-EAF0-861B-F3BDECF0B913}|SaqrResturant.csproj|solutionrelative:controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A4EBCF51-AF22-EAF0-861B-F3BDECF0B913}|SaqrResturant.csproj|c:\\users\\m\\source\\repos\\saqrresturant\\data\\resturantcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A4EBCF51-AF22-EAF0-861B-F3BDECF0B913}|SaqrResturant.csproj|solutionrelative:data\\resturantcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -25,58 +14,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 229,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "dbo.Inbox [Data]",
-              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/SaqrDB/True/SqlTable/dbo.Inbox.sql",
-              "ToolTip": "dbo.Inbox [Data]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2026-06-16T14:58:00.427Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AdminController.cs",
-              "DocumentMoniker": "C:\\Users\\M\\source\\repos\\SaqrResturant\\Controllers\\AdminController.cs",
-              "RelativeDocumentMoniker": "Controllers\\AdminController.cs",
-              "ToolTip": "C:\\Users\\M\\source\\repos\\SaqrResturant\\Controllers\\AdminController.cs",
-              "RelativeToolTip": "Controllers\\AdminController.cs",
-              "ViewState": "AgIAAMMAAAAAAAAAAAAIwMgAAAAAAAAAAAAAAA==",
+              "Title": "ResturantContext.cs",
+              "DocumentMoniker": "C:\\Users\\M\\source\\repos\\SaqrResturant\\Data\\ResturantContext.cs",
+              "RelativeDocumentMoniker": "Data\\ResturantContext.cs",
+              "ToolTip": "C:\\Users\\M\\source\\repos\\SaqrResturant\\Data\\ResturantContext.cs",
+              "RelativeToolTip": "Data\\ResturantContext.cs",
+              "ViewState": "AgIAALkAAAAAOdTvwkowwMIAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-16T14:52:18.936Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\M\\source\\repos\\SaqrResturant\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
-              "ToolTip": "C:\\Users\\M\\source\\repos\\SaqrResturant\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAB4BAAAAAAAAAAAAADgBAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-06-16T11:54:15.662Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\M\\source\\repos\\SaqrResturant\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\M\\source\\repos\\SaqrResturant\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAADUAAAAAAAAAAAAAAD0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-06-16T11:53:03.533Z",
+              "WhenOpened": "2026-06-16T14:59:13.956Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             }
           ]
         }

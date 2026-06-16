@@ -1,25 +1,3 @@
-wwwroot\css\about-section.css
-wwwroot\css\admin\add-category.css
-wwwroot\css\admin\add-item.css
-wwwroot\css\admin\admin-profile.css
-wwwroot\css\admin\edit-item.css
-wwwroot\css\admin\manage-menu.css
-wwwroot\css\admin\manage-orders.css
-wwwroot\css\admin\manage-users.css
-wwwroot\css\auth\login-page.css
-wwwroot\css\auth\signup-page.css
-wwwroot\css\base.css
-wwwroot\css\cart.css
-wwwroot\css\categories.css
-wwwroot\css\contact-section.css
-wwwroot\css\delivery\delivery-manage-order.css
-wwwroot\css\delivery\delivery-profile.css
-wwwroot\css\footer.css
-wwwroot\css\hero.css
-wwwroot\css\item-details.css
-wwwroot\css\menu-page.css
-wwwroot\css\Orders.css
-wwwroot\css\payment.css
 wwwroot\favicon.ico
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
@@ -79,12 +57,34 @@ wwwroot\lib\jquery\dist\jquery.js
 wwwroot\lib\jquery\dist\jquery.min.js
 wwwroot\lib\jquery\dist\jquery.min.map
 wwwroot\lib\jquery\LICENSE.txt
+wwwroot\css\about-section.css
+wwwroot\css\admin\add-category.css
+wwwroot\css\admin\add-item.css
+wwwroot\css\admin\admin-profile.css
+wwwroot\css\admin\edit-item.css
+wwwroot\css\admin\manage-menu.css
+wwwroot\css\admin\manage-orders.css
+wwwroot\css\admin\manage-users.css
+wwwroot\css\auth\login-page.css
+wwwroot\css\auth\signup-page.css
+wwwroot\css\menu-page.css
+wwwroot\css\cart.css
+wwwroot\css\categories.css
+wwwroot\css\contact-section.css
+wwwroot\css\delivery\delivery-manage-order.css
+wwwroot\css\delivery\delivery-profile.css
+wwwroot\css\footer.css
+wwwroot\css\hero.css
+wwwroot\css\item-details.css
+wwwroot\css\base.css
+wwwroot\css\Orders.css
+wwwroot\css\payment.css
 wwwroot\uploads\Burger\Chicken Burger\chicken.jpg
 wwwroot\uploads\Burger\Smash Burger\smash.jpg
 wwwroot\uploads\Desserts\Cheesecake\cheese.jpg
 wwwroot\uploads\Desserts\Chocolate Cake\ccake.jpg
 wwwroot\uploads\Drinks\Cola\cola.jpg
 wwwroot\uploads\Drinks\Iced Coffee\iced.jpg
-wwwroot\uploads\logo.png
 wwwroot\uploads\Pizza\Seafood Pizza\seafood pizza.jpg
 wwwroot\uploads\Pizza\Supreme Pizza\supreme.jpg
+wwwroot\uploads\logo.png
