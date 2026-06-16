@@ -208,7 +208,7 @@ namespace SaqrResturant.Controllers
             var user = _context.Users.FirstOrDefault(u => u.userName == userstring);
             if (user == null || user.role != Models.Role.Admin) return RedirectToAction("Login", "Auth");
 
-            var users = _context.Users.Where(u=>u.deletedOn ==null).ToList();
+            var users = _context.Users.Where(u=>u.deletedOn ==null && u.Id != user.Id).ToList();
             if (users == null) return RedirectToAction("Index", "Home");
 
 
