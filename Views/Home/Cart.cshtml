@@ -1,0 +1,138 @@
+@{
+    ViewData["Title"] = "Your Cart";
+
+}
+
+    @section Styles{
+    <link rel="stylesheet" href="~/css/cart-page.css">
+    <link rel="stylesheet" href="~/css/cart.css">
+    }
+
+
+<section class="cart-section">
+    <div class="cart-container">
+        
+        <div class="cart-header">
+            <h2>Your Shopping Cart</h2>
+            <p>Review your selected meals and manage quantities before checkout</p>
+        </div>
+
+        <div class="cart-content-wrapper">
+            
+            <div class="table-wrapper">
+                <table class="cart-table">
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Subtotal</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            double total = 0;
+                        }
+                        @foreach (var item in @Model)
+                        {
+
+                            <tr>
+                                <td data-label="Product">
+                                    <div class="cart-product-item">
+                                        <img src="/@item.Imgpath" alt="@item.name">
+                                        <span class="product-name">@item.name</span>
+                                    </div>
+                                </td>
+                                <td data-label="Price"><span class="cart-price">$@item.Price</span></td>
+                                <td data-label="Quantity">
+                                    <div class="quantity-controller">
+                                       
+                                        <input type="number" class="qty-input" name="quantity" value="@item.Quantity" min="1" readonly>
+                                        
+                                    </div>
+                                </td>
+                                <td data-label="Subtotal"><span class="cart-subtotal">$@(@item.Price * @item.Quantity)</span></td>
+                                @{
+                                    
+                                    total += (item.Price * item.Quantity);
+                                }
+                                <td data-label="Action">
+                                    <form asp-action="Removeitem" asp-controller="Home">
+                                        <button type="submit" name="id" value="@item.MenuID" class="delete-btn">
+                                            <i class="fa-solid fa-trash-can"></i>
+                                        </button>
+                                    </form>
+                                    <form asp-action="Edititemquantity" asp-controller="Home" method="get">
+                                        <button type="submit" name="id" value="@item.MenuID" class="delete-btn" style="color:blue;">
+                                            ✎
+                                        </button>
+
+                                    </form>
+                                </td>
+
+                            </tr>
+                        }
+
+
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="cart-summary-card">
+                <h3>Order Summary</h3>
+                <div class="summary-row">
+                    <span>Items Total</span>
+                    @{
+
+
+                    }
+                    <span>$@(total)</span>
+                </div>
+                <div class="summary-row">
+                    <span>Delivery Fee</span>
+                    <span>$3.00</span>
+                </div>
+                <hr class="summary-divider">
+                <div class="summary-row total-row">
+                    <span>Total Amount</span>
+                    @{
+                        if (total == 0) total = -3;
+                    }
+                    <span>$@(@total + 3)
+                    </span>
+                    </div>
+                    <form asp-action="Payment" asp-controller="Home" method="get">
+                    <button type="submit" class="checkout-btn">
+                    <i class="fa-solid fa-credit-card"></i> Proceed to Payment
+                </button>
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<script>
+    document.querySelectorAll('.cart-table tbody tr').forEach(row => {
+        const minusBtn = row.querySelector('.minus-btn');
+        const plusBtn = row.querySelector('.plus-btn');
+        const qtyInput = row.querySelector('.qty-input');
+
+        if (minusBtn && plusBtn && qtyInput) {
+            minusBtn.addEventListener('click', () => {
+                let currentValue = parseInt(qtyInput.value);
+                if (currentValue > 1) {
+                    qtyInput.value = currentValue - 1;
+                }
+            });
+
+            plusBtn.addEventListener('click', () => {
+                let currentValue = parseInt(qtyInput.value);
+                qtyInput.value = currentValue + 1;
+            });
+        }
+    });
+</script>

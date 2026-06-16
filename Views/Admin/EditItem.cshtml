@@ -1,0 +1,72 @@
+@model menuModel
+@{
+    ViewData["Title"] = "Edit Menu Item";
+}
+
+@section Styles{<link rel="stylesheet" href="~/css/admin/add-item.css">}
+
+
+<section class="form-section">
+    <div class="form-card">
+        
+        <div class="form-card-header">
+            <h2>Edit Menu Item</h2>
+            <p>Modify the details, pricing, or status of this dish</p>
+        </div>
+
+        <!--enctype="multipart/form-data"-->
+        <form asp-action="Edititem" asp-controller="Admin" method="post"  class="admin-form">
+            <input type="hidden" asp-for="Id" />
+            <div class="form-row">
+                <div class="form-group">
+                    <label asp-for="@Model.name">Dish Name</label>
+                    <input type="text" asp-for="@Model.name" value="@Model.name" required>
+                    <span style="color:red;font-size:.9em;" asp-validation-for="name"></span>
+                </div>
+                
+                <div class="form-group">
+                    <label asp-for="@Model.price">Price ($)</label>
+                    <input type="number" asp-for="@Model.price" step="0.01" value="@Model.price" required>
+                    <span style="color:red;font-size:.9em;" asp-validation-for="price"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="@Model.category">Category</label>
+                <select asp-for="@Model.category" required>
+                    @foreach (var category in Enum.GetValues<Categories>())
+                            {
+                        <option value="@category" selected>@category.ToString()</option>
+                            }
+                        </select>
+                    <span style="color:red;font-size:.9em;" asp-validation-for="category"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="description">Description</label>
+                <textarea asp-for="description" rows="4" required>@Model.description</textarea>
+                <span style="color:red;font-size:.9em;" asp-validation-for="description"></span>
+            </div>
+
+            <div class="form-group">
+                    <span style="color:red;font-size:.9em;" asp-validation-for="Imgpath"></span>
+                <label asp-for="Imgpath">Dish Image (Leave empty to keep current)</label>
+                <div class="file-input-wrapper">
+                    wwwroot/<input asp-for="Imgpath">
+                    <p style="color:red;font-size:.9em;">Item must be in wwwroot/uploads!</p>
+
+                </div>
+            </div>
+
+        
+
+            <div class="form-actions">
+                <a asp-controller="Admin" asp-action="ManageMenu" class="form-btn cancel-btn">Cancel</a>
+                <button type="submit" class="form-btn submit-btn">Update Item</button>
+            </div>
+
+        </form>
+
+    </div>
+</section>
+

@@ -1,0 +1,101 @@
+@model UserModel
+
+@{
+    ViewData["Title"] = "Profile";
+
+}
+    @section Styles{
+    <link rel="stylesheet" href="~/css/admin/admin-profile.css">
+    }
+
+
+<section class="profile-section">
+
+    <div class="profile-card">
+        @if (TempData["message"] != null)
+        {
+            <div class="successful-operation">
+                @TempData["message"]
+            </div>
+        }
+        <div class="profile-avatar-wrapper">
+            @if (Model.role.ToString() == "Admin")
+            {
+                <i class="fa-solid fa-user-shield"></i>
+            }
+            else if (Model.role.ToString() == "User")
+            { 
+                <i class="fa-solid fa-user"></i>            
+            }
+            else
+            {
+                
+                <i class= "fa-solid fa-motorcycle"></i>
+            }
+        </div>
+        
+        <div class="profile-meta">
+            <h2>@Model.fullName</h2>
+            <span class="role-badge">@Model.role.ToString()</span>
+        </div>
+
+        <div class="profile-details-list">
+            <div class="detail-item">
+                <span class="detail-label">Full name:</span>
+                <span class="detail-value">@Model.fullName</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">Delivery Location:</span>
+                <span class="detail-value">
+                    @if(Model.deliveryLocation != null){@Model.deliveryLocation}
+                    
+                    </span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">User name:</span>
+                <span class="detail-value">@Model.userName</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">Phone number:</span>
+                <span class="detail-value">@Model.phoneNumber</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">Account Status</span>
+                <span class="detail-value status-active">Active</span>
+            </div>
+        </div>
+
+        <div class="profile-actions" @(Model.role.ToString() == "Admin" ? "style=flex-direction:column;gap:5px;" : "")>
+            @if (Model.role.ToString() == "Delivery")
+            {
+                <a asp-action="DeliveryViewOrders" asp-controller="Deliv" class="profile-btn secondary-btn" style="color:green;">
+                    <i class="fa-solid fa-motorcycle"></i> View Orders
+                </a>
+
+
+
+            }
+
+            @if(Model.role.ToString() == "Admin"){
+            <a asp-action="ManageMenu" asp-controller="Admin" class="profile-btn secondary-btn" style="color:dark
+                    yellow;">
+                    <i class="fa-solid fa-bars"></i> Manage menu
+            </a>
+            <a asp-action="ManageOrders" asp-controller="Admin" class="profile-btn secondary-btn" style="color:darkgoldenrod">
+                    <i class="fa-solid fa-clipboard-list"></i> Manage Orders
+            </a>
+            <a asp-action="ManageUsers" asp-controller="Admin" class="profile-btn secondary-btn" style="color:green;">
+                <i class="fa-solid fa-user"></i> Manage Users
+            </a>
+
+
+
+            }
+            <a asp-action="ChangePassword" asp-controller="Auth" class="profile-btn secondary-btn">
+                <i class="fa-solid fa-key"></i> Change Password
+            </a>
+          
+        </div>
+
+    </div>
+</section>

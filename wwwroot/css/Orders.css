@@ -1,0 +1,111 @@
+.orders-section {
+    padding: 60px 0;
+    background-color: #fafafa;
+    min-height: calc(100vh - 70px);
+}
+
+.orders-container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.orders-header {
+    margin-bottom: 40px;
+}
+
+.orders-header h2 {
+    color: #111111;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.orders-header p {
+    color: #666666;
+    font-size: 15px;
+}
+
+.table-wrapper {
+    background-color: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #edf0f2;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+    overflow-x: auto;
+}
+
+.user-orders-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 14px;
+}
+
+.user-orders-table th {
+    background-color: #f8f9fa;
+    color: #444444;
+    font-weight: 600;
+    padding: 18px 20px;
+    border-bottom: 1px solid #edf0f2;
+}
+
+.user-orders-table td {
+    padding: 20px;
+    border-bottom: 1px solid #f6f8f9;
+    color: #333333;
+    vertical-align: middle;
+}
+
+.order-id {
+    font-weight: 700;
+    color: #ff7a00;
+}
+
+.order-date {
+    color: #666666;
+    font-weight: 500;
+}
+
+.order-items {
+    color: #555555;
+    font-weight: 500;
+}
+
+.order-total {
+    font-weight: 700;
+    color: #8b4513;
+}
+
+.status-badge {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+.status-badge.pending {
+    background-color: #f1f3f5;
+    color: #495057;
+}
+
+.status-badge.delivered {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+}
+    .status-badge.delivering {
+        background-color: #F8FFB2;
+        color: #757D2F;
+    }
+
+.status-badge.cancelled {
+    background-color: #ffebee;
+    color: #c62828;
+}
+
+@media (max-width: 768px) {
+    .orders-header {
+        text-align: center;
+    }
+}

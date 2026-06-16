@@ -1,0 +1,66 @@
+@model List<DeliveryOrderViewModel>
+@{
+    ViewData["Title"] = "Manage Orders";
+
+}
+
+    @section Styles{
+    <link rel="stylesheet" href="~/css/Orders.css">
+
+    <link rel="stylesheet" href="~/css/admin/manage-orders.css">
+    }
+
+<section class="dashboard-section">
+    <div class="dashboard-container">
+        
+        <div class="dashboard-header">
+            <div>
+                <h2>Manage Orders</h2>
+                <p>Track, update, and manage incoming restaurant orders</p>
+            </div>
+        </div>
+
+        <div class="table-wrapper">
+            <table class="orders-table">
+                <thead>
+                    <tr>
+                        <th>Order ID</th>
+                        <th>Customer</th>
+                        <th>Address</th>
+                        <th>Items</th>
+                        <th>Total Price</th>
+                        <th>Status</th>
+                        <th>Manage Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach(var delivery in @Model){
+                    <tr>
+                        <td><span class="order-id">@delivery.DeliveryId</span></td>
+                        <td><span class="customer-name">@delivery.CustomerName</span></td>
+                        <td><span class="customer-address">@delivery.Address</span></td>
+                        <td><span class="order-items">@delivery.Items</span></td>
+                        <td><span class="order-total">$@delivery.TotalPrice</span></td>
+                        <td><span class="status-badge @delivery.Status.ToString().ToLower()">@delivery.Status</span></td>
+                        <td>
+                            <form action="Editstatus" method="post" class="status-form">
+                                <input type="hidden" name="id" value="@delivery.DeliveryId" />
+                                <select name="orderstatus" class="status-select" onchange="this.form.submit()">
+                                        <option value="" selected disabled>Select Status</option>
+
+                                        @foreach (var status in Enum.GetValues<Status>())
+                                        {
+                                            <option value="@status">@status.ToString()</option>
+                                        }
+                                    </select>
+                            </form>
+                        </td>
+                    </tr>
+                        }
+                   
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</section>

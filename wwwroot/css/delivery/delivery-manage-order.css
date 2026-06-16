@@ -1,0 +1,137 @@
+.dashboard-section {
+    min-height: calc(100vh - 70px);
+    background-color: #f8f9fa;
+    padding: 40px 20px;
+}
+
+.dashboard-container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.dashboard-header {
+    margin-bottom: 30px;
+}
+
+.dashboard-header h2 {
+    color: #222222;
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.dashboard-header p {
+    color: #777777;
+    font-size: 14px;
+}
+
+.table-wrapper {
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: 1px solid #eef0f2;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+    overflow-x: auto;
+}
+
+.orders-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 14px;
+}
+
+.orders-table th {
+    background-color: #fafbfc;
+    color: #444444;
+    font-weight: 600;
+    padding: 16px 20px;
+    border-bottom: 1px solid #eef0f2;
+}
+
+.orders-table td {
+    padding: 16px 20px;
+    border-bottom: 1px solid #f6f8f9;
+    color: #333333;
+    vertical-align: middle;
+}
+
+.order-id {
+    font-weight: 700;
+    color: #ff7a00;
+}
+
+.customer-name {
+    font-weight: 600;
+    color: #111111;
+}
+
+.customer-address {
+    color: #666666;
+    font-weight: 500;
+}
+
+.order-items {
+    color: #555555;
+    max-width: 200px;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.order-total {
+    font-weight: 700;
+    color: #8b4513;
+}
+
+.status-badge {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+.status-badge.delivering {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.status-badge.delivered {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+}
+
+.status-form {
+    margin: 0;
+    padding: 0;
+}
+
+.status-select {
+    padding: 8px 30px 8px 12px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #333333;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    cursor: pointer;
+    outline: none;
+    transition: 0.2s ease;
+    appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23555' viewBox='0 0 24 24'><path d='M7 10l5 5 5-5z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+}
+
+.status-select:focus {
+    border-color: #ff7a00;
+    box-shadow: 0 0 0 3px rgba(255, 122, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .dashboard-header {
+        text-align: center;
+    }
+}

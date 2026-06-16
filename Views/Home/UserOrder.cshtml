@@ -1,0 +1,80 @@
+@model List<deliveryModel>
+@{
+    ViewData["Title"] = "Your Orders";
+
+}
+
+    @section Styles{
+    <link rel="stylesheet" href="~/css/user-orders.css">
+    <link rel="stylesheet" href="~/css/Orders.css">
+    }
+
+<section class="orders-section">
+    
+    <div class="orders-container">
+
+        <div class="orders-header">
+            <h2>Your Orders History</h2>
+            <p>Track the status of your current orders and review your past meals</p>
+        </div>
+        @if (TempData["message"] != null)
+        {
+            <div class="successful-operation" style="color:darkred;background-color:red;border-color:darkred;">
+                @TempData["message"]
+            </div>
+
+        }
+        <div class="table-wrapper">
+            <table class="user-orders-table">
+                <thead>
+                    <tr>
+                        <th>Order ID</th>
+                        <th>Date</th>
+                        <th>Items Ordered</th>
+                        <th>Total Price</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @foreach (var order in @Model)
+                    {
+                        <tr>
+                            <td><span class="order-id">@order.OrderId</span></td>
+                            <td><span class="order-date">@order.assignedAt</span></td>
+                            <td><span class="order-items">
+                                    @{
+                                        string? orderdetails = string.Join(" , ",
+                                        order.Order.OrderDetails.Select(x => x.quantity + "x " + x.Menu.name )
+                                        );
+
+
+                                    }
+
+
+                                    @orderdetails
+                            </span></td>
+                            <td><span class="order-total">$@order.Order.totalPrice</span></td>
+                            @{
+
+                                var orderstatus = order.status.ToString() ?? "pending";
+                                orderstatus = orderstatus.ToLower();
+                            }
+                            <td><span class="status-badge @orderstatus">@orderstatus</span></td>
+                            <td>
+                                @if (order.status != Status.Delivered)
+                                {
+                                    <a asp-action="Cancelorder" asp-controller="Home" asp-route-id="@order.OrderId" style="color:red;">
+                                        Cancel Order
+                                    </a>                
+                                }
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</section>

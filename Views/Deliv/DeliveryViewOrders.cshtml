@@ -1,0 +1,85 @@
+@model List<DeliveryOrderViewModel>
+@{
+    ViewData["Title"] = "Delivery Orders";
+
+}
+
+    @section Styles{
+    <link rel="stylesheet" href="~/css/Orders.css">
+
+    <link rel="stylesheet" href="~/css/delivery/delivery-manage-order.css">
+    }
+
+
+<section class="dashboard-section">
+    <div class="dashboard-container">
+        
+        <div class="dashboard-header">
+            <div>
+                <h2>Delivery Dashboard</h2>
+                <p>Manage your assigned orders and update delivery statuses</p>
+            </div>
+        </div>
+
+        <div class="table-wrapper">
+            <table class="orders-table">
+                <thead>
+                    <tr>
+                        <th>Order ID</th>
+                        <th>Customer</th>
+                        <th>Address</th>
+                        <th>Items</th>
+                        <th>Total Price</th>
+                        <th>Current Status</th>
+                        <th>Update Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach(var item in @Model){
+                    <tr>
+                        <td><span class="order-id">@item.DeliveryId</span></td>
+                        <td><span class="customer-name">@item.CustomerName</span></td>
+                        <td><span class="customer-address">@item.Address</span></td>
+                        <td><span class="order-items">@item.Items
+
+
+
+                        </span></td>
+                        <td><span class="order-total">$@item.TotalPrice</span></td>
+
+                            @{
+                                var status = item.Status.ToString() ?? "";
+                                status = status.ToLower();
+
+                        }
+                        <td><span class="status-badge @status">@status</span></td>
+                        <td>
+                                
+
+                            @if(status!= "cancelled")
+                            {
+                                <form asp-action="ChangeStatus" asp-controller="Deliv" method="post" class="status-form">
+                                        <input type="hidden" name="id" value="@item.DeliveryId" />
+                                    <select name="deliverystatus" class="status-select" onchange="this.form.submit()">
+                                        <option value="" selected></option>
+                                        <option value="Pending">Pending</option>
+                                        <option value="Delivering">Delivering</option>
+                                        <option value="Delivered">Delivered</option>
+                                    </select>
+                                    
+                                </form>
+
+                            }
+
+                            
+                            
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</section>
+

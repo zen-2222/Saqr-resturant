@@ -1,0 +1,91 @@
+@model SignupModel
+@{
+    ViewData["Title"] = "Sign Up";
+
+}
+
+    @section Styles{
+    <link rel="stylesheet" href="~/css/auth/login-page.css">
+    }
+
+
+<section class="auth-section">
+    <div class="auth-card">
+        
+        <div class="auth-header">
+            <div class="brand-icon-wrapper">
+                <i class="fa-solid fa-user-plus"></i>
+            </div>
+            <h2>Create Account</h2>
+            <p>Join our restaurant community today</p>
+        </div>
+
+        <form asp-action="Signup" asp-controller="Auth" method="POST" class="auth-form">
+            
+            <div class="auth-group">
+                <label asp-for="fullName">Full Name<span style="color:red;">*</span>:</label>
+                <input type="text" asp-for="fullName" placeholder="Enter your full name" required>
+                <span asp-validation-for="fullName" style="color:red;font:.9em;"></span>
+            </div>
+
+            <div class="auth-group">
+                <label asp-for="userName">User name<span style="color:red;">*</span>:</label>
+                <input type="text" asp-for="userName" placeholder="Enter your User name" required>
+                <span asp-validation-for="userName" style="color:red;font:.9em;"></span>
+
+            </div>
+            <div class="auth-group">
+                <label asp-for="phoneNumber">Phone number:<span style="color:red;">*</span></label>
+                <input type="tel" asp-for="phoneNumber" placeholder="Enter your Phone number" required>
+                <span asp-validation-for="phoneNumber" style="color:red;font:.9em;"></span>
+
+            </div>
+            <div class="auth-group">
+                <label asp-for="deliveryLocation">Delivery Location:</label>
+                <input type="text" asp-for="deliveryLocation" placeholder="Enter your Delivery Location">
+                <span asp-validation-for="deliveryLocation" style="color:red;font:.9em;"></span>
+
+            </div>
+
+            <div class="auth-group">
+                <label asp-for="password">Password:<span style="color:red;">*</span></label>
+                <div class="password-input-wrapper">
+                    <input type="password" asp-for="password" placeholder="Create a password" required>
+                </div>
+                <span asp-validation-for="password" style="color:red;font:.9em;"></span>
+            </div>
+
+            <div class="auth-group">
+                <label asp-for="Confpassword">Confirm Password<span style="color:red;">*</span>:</label>
+                <div class="password-input-wrapper">
+                    <input type="password" asp-for="Confpassword" placeholder="Confirm your password" required>
+                </div>
+                <span asp-validation-for="Confpassword" style="color:red;font:.9em;"></span>
+
+            </div>
+
+
+            <div class="auth-options">
+                <label class="remember-me-label">
+                    <input type="checkbox" name="terms" required>
+                    <span>I agree to the Terms & Conditions</span>
+                </label>
+            </div>
+            @{
+                    if (ViewBag.message != null)
+                    {
+                        <div style="color:red;">@ViewBag.message</div>                
+                    }
+                }
+            <button type="submit" class="auth-submit-btn">Create Account</button>
+
+            <div class="switch-auth-mode">
+                <p>Already have an account? <a href="/Auth/Login">Login</a></p>
+            </div>
+
+        </form>
+
+    </div>
+
+
+</section>

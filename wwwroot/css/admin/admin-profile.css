@@ -1,0 +1,134 @@
+.profile-section {
+    min-height: calc(100vh - 70px);
+    background-color: #f8f9fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.profile-card {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 500px;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    border: 1px solid #eef0f2;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.profile-avatar-wrapper {
+    width: 90px;
+    height: 90px;
+    background-color: #fff0e6;
+    color: #ff7a00;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.profile-meta h2 {
+    color: #222222;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.role-badge {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    padding: 4px 12px;
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 20px;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 30px;
+}
+
+.profile-details-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border-top: 1px solid #f0f2f5;
+    border-bottom: 1px solid #f0f2f5;
+    padding: 25px 0;
+    margin-bottom: 30px;
+}
+
+.detail-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+}
+
+.detail-label {
+    color: #777777;
+    font-weight: 500;
+}
+
+.detail-value {
+    color: #222222;
+    font-weight: 600;
+}
+
+.detail-value.status-active {
+    color: #2e7d32;
+}
+
+.profile-actions {
+    display: flex;
+    gap: 15px;
+}
+
+.profile-btn {
+    flex: 1;
+    padding: 12px;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 6px;
+    text-decoration: none;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    transition: 0.2s ease;
+    box-sizing: border-box;
+}
+
+.primary-btn {
+    background-color: #ff7a00;
+    color: #ffffff;
+}
+
+.primary-btn:hover {
+    background-color: #e06c00;
+}
+
+.secondary-btn {
+    background-color: #ffffff;
+    color: #8b4513;
+    border: 1px solid #cccccc;
+}
+
+.secondary-btn:hover {
+    background-color: #f8f9fa;
+    border-color: #8b4513;
+}
+
+@media (max-width: 480px) {
+    .profile-card {
+        padding: 30px 20px;
+    }
+
+    .profile-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

@@ -1,0 +1,313 @@
+
+@{
+    ViewData["Title"] = "Home";
+}
+@section Styles{
+ <link rel="stylesheet" href="~/css/hero.css">
+ <link rel="stylesheet" href="~/css/categories.css">
+ <link rel="stylesheet" href="~/css/contact-section.css">
+}
+
+<section class="hero-section">
+    <div class="hero-container">
+        <div class="hero-content">
+            <h1>Deliciousness Delivered to Your Door</h1>
+            <p>Experience boutique dining from the comfort of your home. Fresh ingredients, artisan preparation, and rapid delivery.</p>
+            
+            <a href="/Home/Menu" class="hero-btn">
+                View Menu <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+
+<section class="categories-section">
+    <div class="categories-container">
+        
+        <span class="sub-title">BROWSE OUR FLAVORS</span>
+        <h2 class="main-title">Popular Categories</h2>
+
+        <div class="categories-grid">
+
+            <div class="category-card" style="cursor:default;">
+                <div class="category-icon-wrapper">
+                    <i class="fa-solid fa-hamburger"></i>
+                </div>
+                <h3>Burgers</h3>
+            </div>
+
+            <div class="category-card" style="cursor:default;">
+                <div class="category-icon-wrapper">
+                    <i class="fa-solid fa-pizza-slice"></i>
+                </div>
+                <h3>Pizza</h3>
+            </div>
+
+            <div class="category-card" style="cursor:default;">
+                <div class="category-icon-wrapper">
+                    <i class="fa-solid fa-utensils"></i>
+                </div>
+                <h3>Pasta</h3>
+            </div>
+
+            <div class="category-card" style="cursor:default;">
+                <div class="category-icon-wrapper">
+                    <i class="fa-solid fa-glass-water"></i>
+                </div>
+                <h3>Drinks</h3>
+            </div>
+
+            </div>
+    </div>
+</section>
+
+<link rel="stylesheet" href="~/css/about-section.css">
+
+<section class="about-section">
+    <div class="about-container">
+        
+        <div class="about-image-side">
+            <div class="image-wrapper">
+                <div class="deco-box"></div>
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCatK_D1IOjxrztVjTrX_WMi4TPVYCDcmf2BrFhxaV-0eSZnV9Wy7iz1qRZOzbpN2XHGXqKJ7tVEg51zRUVlbxQqENnVyacw8zzivqCar_oCQ_el-kqExqYwyT2EOnTKQHj14sX3hOJABGXmwfAGbWSXJ8KdHPbHc--SSd1TAL5WffU5tDE0dn83SS8lo22UU02bHBKhtgLIYqFCYGzTZbdOrV50d_1s6uOsJI1minOeKfNAYtSGjtrmxL6C74DGT17qDtBN8d2uyyP" alt="Our Chef Working" class="chef-img">
+            </div>
+        </div>
+
+        <div class="about-text-side">
+            <span class="sub-title">OUR STORY</span>
+            <h2 class="main-title">Culinary Passion in Every Bite</h2>
+            
+            <p class="about-p">
+                Born from a love of authentic flavors and the joy of shared meals, Restaurant Project brings the restaurant experience directly to your home. We partner with local farmers to source the freshest ingredients, ensuring every dish meets our uncompromising standards of quality.
+            </p>
+            
+            <p class="about-p">
+                Our team of dedicated chefs blends traditional techniques with modern innovation to create a menu that is as diverse as it is delicious. From hand-stretched pizzas to perfectly seared wagyu, we invite you to taste the difference.
+            </p>
+
+            <div class="stats-container">
+                <div class="stat-box">
+                    <h3>12k+</h3>
+                    <p>HAPPY DINERS</p>
+                </div>
+                <div class="stat-box">
+                    <h3>45+</h3>
+                    <p>MASTER CHEFS</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="contact-section">
+    <div class="contact-card-container">
+        
+        <div class="contact-info-side">
+            <h2>Get in Touch</h2>
+            <p class="subtitle">Have a question or want to book a private event? We're here to help.</p>
+            
+            <div class="info-list">
+                <div class="info-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div>
+                        <strong>Visit Us</strong>
+                        <p>AAUP GATE2 <br>JENIN</p>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <div>
+                        <strong>Call Us</strong>
+                        <p>0569549873</p>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <div>
+                        <strong>Email Us</strong>
+                        <p>adelbassam5201@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+
+        
+        </div>
+
+        <form action="" method="POST" class="contact-form-side">
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="full-name">Full Name</label>
+                    <input type="text" id="full-name" name="full_name" placeholder="Adel Abualrub" required>
+                </div>
+                <div class="form-group">
+                    <label for="email-address">Email Address</label>
+                    <input type="email" id="email-address" name="email_address" placeholder="name@example.com" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="subject">Subject</label>
+                <select id="subject" name="subject" required>
+                    <option value="general" selected>General Inquiry</option>
+                    <option value="booking">Book a Private Event</option>
+                    <option value="complaint">Feedback / Complaint</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="user_message" rows="4" placeholder="How can we help you?" required></textarea>
+            </div>
+
+            <button type="submit" class="send-message-btn">Send Message</button>
+        </form>
+
+    </div>
+</section>
+
+
+
+@* <section class="sitemap-review-section">
+    <div class="sitemap-review-container">
+        
+        <div class="sitemap-review-header">
+            <h2>All project links</h2>
+           
+        </div>
+
+        <div class="sitemap-table-wrapper">
+            <table class="sitemap-review-table">
+                <thead>
+                    <tr>
+                        <th>Page Name</th>
+                        <th>Folder Section</th>
+                        <th>Relative File Path</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Menu Page (Client)</strong></td>
+                        <td><span class="folder-badge client-folder">html/</span></td>
+                        <td><code>./html/menu.html</code></td>
+                        <td><a href="/Home/Menu" target="_blank" class="preview-btn"><i class="fa-solid fa-eye"></i> View Page</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Item Details (Client)</strong></td>
+                        <td><span class="folder-badge client-folder">html/</span></td>
+                        <td><code>./html/item-details.html</code></td>
+                        <td><a href="/Home/ItemDetails" target="_blank" class="preview-btn"><i class="fa-solid fa-eye"></i> View Page</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Shopping Cart (Client)</strong></td>
+                        <td><span class="folder-badge client-folder">html/</span></td>
+                        <td><code>./html/cart.html</code></td>
+                        <td><a href="/Home/Cart" target="_blank" class="preview-btn"><i class="fa-solid fa-eye"></i> View Page</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Payment Checkout (Client)</strong></td>
+                        <td><span class="folder-badge client-folder">html/</span></td>
+                        <td><code>./html/payment.html</code></td>
+                        <td><a href="/Home/Payment" target="_blank" class="preview-btn"><i class="fa-solid fa-eye"></i> View Page</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Track User Orders (Client)</strong></td>
+                        <td><span class="folder-badge client-folder">html/</span></td>
+                        <td><code>./html/userOrder.html</code></td>
+                        <td><a href="/Home/UserOrder" target="_blank" class="preview-btn"><i class="fa-solid fa-eye"></i> View Page</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Contact Us (Client)</strong></td>
+                        <td><span class="folder-badge client-folder">html/</span></td>
+                        <td><code>./html/contact.html</code></td>
+                        <td><a href="/Home/Contact" target="_blank" class="preview-btn"><i class="fa-solid fa-eye"></i> View Page</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Admin Profile Dashboard</strong></td>
+                        <td><span class="folder-badge admin-folder">html/admin/</span></td>
+                        <td><code>./html/admin/Admin-profile.html</code></td>
+                        <td><a href="/Home/AdminProfile" target="_blank" class="preview-btn"><i class="fa-solid fa-eye"></i> View Page</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Manage Menu Grid (Admin)</strong></td>
+                        <td><span class="folder-badge admin-folder">html/admin/</span></td>
+                        <td><code>./html/admin/manage-menu.html</code></td>
+                        <td><a href="/Home/ManageMenu" target="_blank" class="preview-btn"><i class="fa-solid fa-eye"></i> View Page</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Add Menu Item (Admin)</strong></td>
+                        <td><span class="folder-badge admin-folder">html/admin/</span></td>
+                        <td><code>./html/admin/add-item.html</code></td>
+                        <td><a href="/Home/AddItem" target="_blank" class="preview-btn"><i class="fa-solid fa-eye"></i> View Page</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Edit Menu Item (Admin)</strong></td>
+                        <td><span class="folder-badge admin-folder">html/admin/</span></td>
+                        <td><code>./html/admin/edit-item.html</code></td>
+                        <td><a href="/Home/EditItem" target="_blank" class="preview-btn"><i class="fa-solid fa-eye"></i> View Page</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Add Category (Admin)</strong></td>
+                        <td><span class="folder-badge admin-folder">html/admin/</span></td>
+                        <td><code>./html/admin/add-category.html</code></td>
+                        <td><a href="/Home/AddCategory" target="_blank" class="preview-btn"><i class="fa-solid fa-eye"></i> View Page</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Edit Category (Admin)</strong></td>
+                        <td><span class="folder-badge admin-folder">html/admin/</span></td>
+                        <td><code>./html/admin/edit-category.html</code></td>
+                        <td><a href="/Home/EditCategory" target="_blank" class="preview-btn"><i class="fa-solid fa-eye"></i> View Page</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Manage Incoming Orders (Admin)</strong></td>
+                        <td><span class="folder-badge admin-folder">html/admin/</span></td>
+                        <td><code>./html/admin/manage-orders.html</code></td>
+                        <td><a href="/Home/ManageOrders" target="_blank" class="preview-btn"><i class="fa-solid fa-eye"></i> View Page</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Manage System Users (Admin)</strong></td>
+                        <td><span class="folder-badge admin-folder">html/admin/</span></td>
+                        <td><code>./html/admin/manage-users.html</code></td>
+                        <td><a href="/Home/ManageUsers" target="_blank" class="preview-btn"><i class="fa-solid fa-eye"></i> View Page</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Delivery Profile</strong></td>
+                        <td><span class="folder-badge delivery-folder">html/Delivery/</span></td>
+                        <td><code>./html/Delivery/delivery-profile.html</code></td>
+                        <td><a href="/Home/DeliveryProfile" target="_blank" class="preview-btn"><i class="fa-solid fa-eye"></i> View Page</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Manage Orders (Delivery)</strong></td>
+                        <td><span class="folder-badge delivery-folder">html/Delivery/</span></td>
+                        <td><code>./html/Delivery/delivery-manage-order.html</code></td>
+                        <td><a href="/Home/DeliveryManageOrder" target="_blank" class="preview-btn"><i class="fa-solid fa-eye"></i> View Page</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>User Login (Auth)</strong></td>
+                        <td><span class="folder-badge auth-folder">html/auth/</span></td>
+                        <td><code>./html/auth/login.html</code></td>
+                        <td><a href="/Home/Login" target="_blank" class="preview-btn"><i class="fa-solid fa-eye"></i> View Page</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>User Signup (Auth)</strong></td>
+                        <td><span class="folder-badge auth-folder">html/auth/</span></td>
+                        <td><code>./html/auth/signup.html</code></td>
+                        <td><a href="/Home/Signup" target="_blank" class="preview-btn"><i class="fa-solid fa-eye"></i> View Page</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Change Password (Auth)</strong></td>
+                        <td><span class="folder-badge auth-folder">html/auth/</span></td>
+                        <td><code>./html/auth/changePassword.html</code></td>
+                        <td><a href="/Home/ChangePassword" target="_blank" class="preview-btn"><i class="fa-solid fa-eye"></i> View Page</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</section> *@

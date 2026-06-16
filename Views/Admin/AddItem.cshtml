@@ -1,0 +1,80 @@
+@model menuModel
+@{
+    ViewData["Title"] = "Add New Item";
+
+}
+
+    @section Styles{
+    <link rel="stylesheet" href="~/css/admin/add-item.css">
+    }
+
+<section class="form-section">
+    <div class="form-card">
+        
+        <div class="form-card-header">
+            <h2>Add New Menu Item</h2>
+            <p>Create a new dish with details, pricing, and tags</p>
+        </div>
+        <!--enctype="multipart/form-data" -->
+        <form asp-action="AddItem" asp-controller="Admin" method="post" class="admin-form">
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label asp-for="name">Dish Name</label>
+                    <input asp-for="name" placeholder="e.g. Signature Burger" required>
+                    <span style="color:red;font-size:.9em;" asp-validation-for="name"></span>
+
+                </div>
+                
+                <div class="form-group">
+                    <label asp-for="price">Price ($)</label>
+                    <input asp-for="price" step="0.01" placeholder="0.00" required>
+                </div>
+                    <span style="color:red;font-size:.9em;" asp-validation-for="price"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="category">Category</label>
+                <select asp-for="category" required>
+                        <option value="" disabled selected>Select a category</option>
+                    @foreach(var category in Enum.GetValues<Categories>())
+                        {
+                            
+                        <option value="@category">@category.ToString()</option>
+
+
+                        }
+
+
+                </select>
+                <span style="color:red;font-size:.9em;" asp-validation-for="category"></span>
+
+            </div>
+
+            <div class="form-group">
+                <label asp-for="description">Description</label>
+                <textarea asp-for="description" rows="4" placeholder="Describe the ingredients and flavor..." required></textarea>
+                <span style="color:red;font-size:.9em;" asp-validation-for="description"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Imgpath">Dish Image</label>
+                <div class="file-input-wrapper">
+                    wwwroot/<input asp-for="Imgpath" required>
+                    <p style="color:red;font-size:.9em;">Item must be in wwwroot/uploads!</p>
+                </div>
+                    <span style="color:red;font-size:.9em;" asp-validation-for="Imgpath"></span>
+
+            </div>
+
+
+
+            <div class="form-actions">
+                <a asp-controller="Admin" asp-action="ManageMenu" class="form-btn cancel-btn">Cancel</a>
+                <button type="submit" class="form-btn submit-btn">Save Item</button>
+            </div>
+
+        </form>
+
+    </div>
+</section>

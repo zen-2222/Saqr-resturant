@@ -1,0 +1,135 @@
+@model List<menuModel>
+@{
+    ViewData["Title"] = "Manage Menu";
+
+}
+
+    @section Styles{
+    <link rel="stylesheet" href="~/css/admin/manage-menu.css">
+    }
+
+<section class="dashboard-section">
+    <div class="dashboard-container">
+        
+        <div class="dashboard-header">
+            <div>
+                <h2>Manage Menu</h2>
+                <p>Switch between tabs to manage dishes or see categories</p>
+            </div>
+
+
+
+
+
+            <div class="header-actions">
+                <a href="/Admin/AddItem" class="add-btn item-btn">
+                    <i class="fa-solid fa-plus"></i> Add New Item
+                </a>
+            </div>
+        </div>
+        @{
+            string? color = TempData["color"] as string;
+        }
+
+        @if (TempData["message"] != null)
+        {
+            <div class="successful-operation"
+                @(color == "red"
+                     ? "style=color:darkred;background-color:red;border-color:red;"
+                     : "")>
+                @TempData["message"]
+            </div>
+        }
+        <div class="dashboard-tabs">
+            <button class="tab-link active" onclick="openTab('menu-items-tab')">Menu Items</button>
+            <button class="tab-link" onclick="openTab('categories-tab')">Categories</button>
+        </div>
+
+        <div id="menu-items-tab" class="tab-content active">
+            <div class="table-wrapper">
+                <table class="menu-table">
+                    <thead>
+                        <tr>
+                            <th>Image</th>
+                            <th>Name</th>
+                            <th>Category</th>
+                            <th>Price</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach(var item in @Model){
+                        <tr>
+                            <td>
+                                <img src="/@item.Imgpath" alt="@item.name" class="table-item-img">
+                            </td>
+                            <td>
+                                <span class="item-name">@item.name</span>
+                            </td>
+                            <td>
+                                <span class="item-category">@item.category.ToString()</span>
+                            </td>
+                            <td>
+                                <span class="item-price">$@item.price</span>
+                            </td>
+                            <td> <!--المفروض توخذ الأيتم نفسه وتبعته مع الايدي على هاي الصفحة -->
+                                <div class="table-actions">
+                                    <a asp-controller="Admin" asp-action="EditItem" class="action-btn edit-btn" asp-route-id="@item.Id">
+                                        <i class="fa-solid fa-pen"></i> Edit
+                                    </a>
+                                        <form asp-controller="Admin" asp-action="DeleteItem" method="post">
+                                            <button type="submit" class="action-btn delete-btn" name="Id"  value="@item.Id">
+                                                <i class="fa-solid fa-trash"></i> Delete
+                                            </button>
+                                        </form>
+                                </div>
+                            </td>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div id="categories-tab" class="tab-content">
+            <div class="table-wrapper">
+                <table class="menu-table">
+                    <thead>
+                        <tr>
+                            <th>Category Name</th>
+                            <th>Items Count</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach(var item in Enum.GetValues<Categories>())
+                        {
+                            <tr>
+                                <td>
+                                    <span class="item-name">@item</span>
+                                </td>
+                                <td>
+                                    <span class="category-count">@Model.Count(u=> u.category == @item) items</span>
+                                </td>
+
+                            </tr>            
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<script>
+    function openTab(tabId) {
+        const contents = document.querySelectorAll('.tab-content');
+        contents.forEach(content => content.classList.remove('active'));
+
+        const tabs = document.querySelectorAll('.tab-link');
+        tabs.forEach(tab => tab.classList.remove('active'));
+
+        document.getElementById(tabId).classList.add('active');
+        event.currentTarget.classList.add('active');
+    }
+</script>

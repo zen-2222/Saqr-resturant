@@ -1,0 +1,91 @@
+@model menuModel
+@{
+    ViewData["Title"] = Model.name;
+
+}
+
+    @section Styles{
+    <link rel="stylesheet" href="~/css/item-details.css">
+    }
+
+<section class="details-section">
+    <div class="details-container">
+        
+        <div class="back-to-menu">
+            <a href="/Home/Menu"><i class="fa-solid fa-arrow-left"></i> Back to Menu</a>
+        </div>
+
+        <div class="item-details-wrapper">
+            
+            <div class="item-image-side">
+                <img src="/@Model.Imgpath" alt="@Model.name">
+            </div>
+
+            <div class="item-info-side">
+                <span class="item-category-tag">@Model.category.ToString()</span>
+                <h1 class="item-title">@Model.name</h1>
+                
+                <div class="item-rating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i>
+                    <span>(4.8 / 5 Rating)</span>
+                </div>
+
+                <p class="item-description">
+                @Model.description
+                </p>
+
+
+                <hr class="details-divider">
+
+            <form asp-action="Additemtocart" asp-controller="Home" method="post">
+                <div class="details-action-area">
+                    <div class="price-section">
+                        <span class="price-label">Price per unit</span>
+                        <span class="item-price">$@Model.price</span>
+                    </div>
+                    <div class="quantity-section">
+                        <span class="qty-label">Quantity</span>
+                        <div class="quantity-controller">
+                            <button type="button" class="qty-btn minus-btn">
+                                <i class="fa-solid fa-minus"></i>
+                            </button>
+                            <input type="number" class="qty-input" name="quantity" value="1" min="1" readonly>
+                            <button type="button" class="qty-btn plus-btn">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <button type="submit" name="id" value="@Model.Id" class="add-to-cart-large-btn">
+                    <i class="fa-solid fa-cart-shopping"></i> Add to Shopping Cart
+                </button>
+            </form>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<script>
+    const minusBtn = document.querySelector('.minus-btn');
+    const plusBtn = document.querySelector('.plus-btn');
+    const qtyInput = document.querySelector('.qty-input');
+
+    minusBtn.addEventListener('click', () => {
+        let currentValue = parseInt(qtyInput.value);
+        if (currentValue > 1) {
+            qtyInput.value = currentValue - 1;
+        }
+    });
+
+    plusBtn.addEventListener('click', () => {
+        let currentValue = parseInt(qtyInput.value);
+        qtyInput.value = currentValue + 1;
+    });
+</script>

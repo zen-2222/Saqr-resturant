@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="~/css/base.css">
+    <link rel="stylesheet" href="~/css/footer.css">
+
+    @RenderSection("Styles", required: false)
+</head>
+<body>
+    @{
+            var ActionTitle = ViewContext.RouteData.Values["action"]?.ToString();
+
+    }
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/Home/Index" class="logo">Restaurant Project</a>
+
+            <input type="checkbox" id="menu-toggle-input" class="menu-checkbox">
+
+            <label for="menu-toggle-input" class="menu-button-label">☰</label>
+
+            <div class="nav-menu">
+                <ul class="nav-links">
+                    <li><a href="/Home/Index" class="@(ActionTitle == "Index"? "active": "" )">Home</a></li>
+                    <li><a href="/Home/Menu" class="@(ActionTitle == "Menu" ? "active" : "")">Menu</a></li>
+                    <li><a href="/Home/Contact" class="@(ActionTitle == "Contact" ? "active" : "")">Contact</a></li>
+                    <li><a href="/Home/UserOrder" class="@(ActionTitle == "UserOrder" ? "active" : "")">your Orders</a></li>
+                        @{
+                            if(Context.Session.GetString("Username") == null)
+                            {
+                            <li><a href="/Auth/Login" class="@(ActionTitle == "Login" ? "active" : "")">Log in</a></li>
+
+
+                            }
+                            else
+                            {
+                                <li><a href="/Home/Profile">Profile</a></li>
+                            <li><a asp-controller="Auth" asp-action="Logout">Logout</a></li>
+
+                            }
+
+                    }
+                    
+
+                    
+                </ul>
+
+                <a href="/Home/Cart" class="cart-icon"><i class="fa-solid fa-cart-shopping"></i></a>
+
+            </div>
+        </div>
+    </nav>
+
+    @RenderBody()
+
+    <footer class="main-footer">
+        <div class="footer-container">
+
+            <div class="footer-logo">
+                <a href="/Home/Index">Restaurant Project</a>
+            </div>
+
+            <ul class="footer-links">
+                <li><a href="/Home/Contact">Contact Us</a></li>
+            </ul>
+
+            <div class="footer-copy">
+                <p>&copy; 2026 Restaurant Project. All rights reserved.</p>
+            </div>
+
+        </div>
+    </footer>
+</body>
+</html>

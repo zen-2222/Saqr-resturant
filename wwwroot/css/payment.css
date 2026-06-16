@@ -1,0 +1,192 @@
+.payment-section {
+    padding: 60px 0;
+    background-color: #fafafa;
+    min-height: calc(100vh - 70px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.payment-container {
+    width: 90%;
+    max-width: 550px;
+    margin: 0 auto;
+}
+
+.payment-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #edf0f2;
+    padding: 35px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+    box-sizing: border-box;
+}
+
+.payment-header {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.payment-header h2 {
+    color: #111111;
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.payment-header p {
+    color: #666666;
+    font-size: 14px;
+}
+
+.payment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.method-selector {
+    display: flex;
+    gap: 15px;
+}
+
+.method-option {
+    flex: 1;
+    cursor: pointer;
+}
+
+.method-option input[type="radio"] {
+    display: none;
+}
+
+.method-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    transition: 0.2s ease;
+    text-align: center;
+}
+
+.method-box i {
+    font-size: 24px;
+    color: #555555;
+}
+
+.method-box span {
+    font-size: 13px;
+    font-weight: 600;
+    color: #555555;
+}
+
+.method-option input[type="radio"]:checked + .method-box {
+    border-color: #ff7a00;
+    background-color: #fff0e6;
+}
+
+.method-option input[type="radio"]:checked + .method-box i,
+.method-option input[type="radio"]:checked + .method-box span {
+    color: #ff7a00;
+}
+
+.visa-details-fields {
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #edf0f2;
+}
+
+.visa-details-fields.active {
+    display: flex;
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+}
+
+.form-group label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #333333;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 11px 14px;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #333333;
+    outline: none;
+    transition: 0.2s ease;
+    box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #ff7a00;
+    box-shadow: 0 0 0 3px rgba(255, 122, 0, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.address-group {
+    border-top: 1px solid #edf0f2;
+    padding-top: 15px;
+}
+
+.place-order-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    background-color: #ff7a00;
+    color: #ffffff;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.place-order-btn:hover {
+    background-color: #e06c00;
+}
+
+@media (max-width: 480px) {
+    .payment-card {
+        padding: 25px 20px;
+    }
+
+    .method-selector {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 15px;
+    }
+}

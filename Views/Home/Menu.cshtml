@@ -1,0 +1,126 @@
+@{
+    ViewData["Title"] = "Menu";
+
+}
+
+    @section Styles{
+    <link rel="stylesheet" href="~/css/menu-page.css">
+    }
+
+<section class="menu-page-section">
+    <div class="menu-page-container">
+        
+        <div class="menu-top-header">
+            <div class="menu-titles">
+                <h2>Our Signature Menu</h2>
+                <p>Discover artisanal flavors crafted with locally sourced ingredients. From sizzling burgers to refreshing sips.</p>
+            </div>
+            
+            <div class="search-wrapper">
+                <form asp-action="Search" asp-controller="Home" method="post">
+                    <input type="text" name="query" placeholder="Search for your favorite meal...">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <button type="submit" style="position:absolute;visibility:hidden;">Search</button>
+                </form>
+            </div>
+        </div>
+
+
+        <form asp-action="Menu" asp-controller="Home" method="post">
+            <div class="filter-buttons-container">
+                <button type="submit" name="category" value="" class="filter-btn @(ViewBag.category == "All" ? "active" : "")">All</button>
+                <button type="submit" name="category" value="Burgers" class="filter-btn @(ViewBag.category == "Burgers" ? "active" : "")">Burgers</button>
+                <button type="submit" name="category" value="Pizza" class="filter-btn @(ViewBag.category == "Pizza" ? "active" : "")">Pizza</button>
+                <button type="submit" name="category" value="Drinks" class="filter-btn @(ViewBag.category == "Drinks" ? "active" : "")">Drinks</button>
+                <button type="submit" name="category" value="Desserts" class="filter-btn @(ViewBag.category == "Desserts" ? "active" : "")">Desserts</button>
+            </div>
+        </form>
+        
+        @if(TempData["message"] != null)
+        {
+            <div class="successful-operation">@TempData["message"]</div>
+        }
+
+
+
+        
+        <div class="menu-products-grid">
+            @{
+            foreach(var item in @Model)
+                {
+                    <div class="product-card">
+                        <div class="product-img-wrapper">
+                            <img src="/@item.Imgpath" alt="@item.name">
+
+                            <div class="img-overlay">
+                                <a asp-action="ItemDetails" asp-controller="Home" asp-route-id="@item.Id" class="view-details-btn">
+                                    <i class="fa-solid fa-eye"></i> View Details
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="product-info">
+                            <h3>@item.name</h3>
+                            <p class="product-desc">@item.description</p>
+
+                            <div class="product-footer">
+
+                                <form asp-action="Additemtocart" asp-controller="Home" method="post">
+                                    <div class="price-qty-row">
+                                        <span class="price">$@item.price</span>
+                                        <div class="quantity-controller">
+                                            <button type="button" class="qty-btn minus-btn">
+                                                <i class="fa-solid fa-minus"></i>
+                                            </button>
+
+                                            <input type="number" class="qty-input" name="quantity" value="1" min="1" readonly>
+
+                                            <button type="button" class="qty-btn plus-btn">
+                                                <i class="fa-solid fa-plus"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <br />
+
+                                    <button type="submit" class="add-to-cart-btn" name="id" value="@item.Id">
+
+                                        <i class="fa-solid fa-cart-shopping"></i> Add to Cart
+                                    </button>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+
+                        
+            
+
+
+
+
+            }}
+
+        </div>
+    </div>
+</section>
+
+<script>
+    document.querySelectorAll('.product-card').forEach(card => {
+        const minusBtn = card.querySelector('.minus-btn');
+        const plusBtn = card.querySelector('.plus-btn');
+        const qtyInput = card.querySelector('.qty-input');
+
+        minusBtn.addEventListener('click', () => {
+            let currentValue = parseInt(qtyInput.value);
+            if (currentValue > 1) {
+                qtyInput.value = currentValue - 1;
+            }
+        });
+
+        plusBtn.addEventListener('click', () => {
+            let currentValue = parseInt(qtyInput.value);
+            qtyInput.value = currentValue + 1;
+        });
+    });
+</script>

@@ -1,0 +1,86 @@
+@model ContactUsModel
+@{
+    ViewData["Title"] = "Contact Us";
+
+}
+
+ @section Styles{
+ <link rel="stylesheet" href="~/css/contact-section.css">
+ }
+<section class="contact-section">
+
+    <div class="contact-card-container">
+        <div class="contact-info-side">
+
+            <h2>Get in Touch</h2>
+            <p class="subtitle">Have a question or want to book a private event? We're here to help.</p>
+            
+            <div class="info-list">
+                <div class="info-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div>
+                        <strong>Visit Us</strong>
+                        <p>AAUP GATE2 <br>JENIN</p>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <div>
+                        <strong>Call Us</strong>
+                        <p>0569549873</p>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <div>
+                        <strong>Email Us</strong>
+                        <p>Saqr@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+
+        
+        </div>
+
+        <form asp-action="Contact" asp-controller="Home" method="post" class="contact-form-side">
+            @if (TempData["message"] != null)
+            {
+                <div class="successful-operation">@TempData["message"]</div>
+            }
+            <div class="form-row">
+                <div class="form-group">
+                    <label asp-for="fullname">Full Name</label>
+                    <input type="text" asp-for="fullname" placeholder="Adel Abualrub" required>
+                </div>
+                    <span asp-validation-for="fullname" style="color:red;font-size:.9em;"></span>
+                <div class="form-group">
+                    <label asp-for="email">Email Address</label>
+                    <input type="email" asp-for="email" placeholder="name@example.com" required>
+
+                </div>
+                    <span asp-validation-for="email" style="color:red;font-size:.9em;"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="subject">Subject</label>
+                <select asp-for="subject" required>
+                    <option value="@inquiry.General" selected>General Inquiry</option>
+                    <option value="@inquiry.private_Event">Book a Private Event</option>
+                    <option value="@inquiry.complaint">Feedback / Complaint</option>
+                </select>
+            </div>
+            <span asp-validation-for="subject" style="color:red;font-size:.9em;"></span>
+
+            <div class="form-group">
+                <label asp-for="Details">Message</label>
+                <textarea asp-for="Details" rows="4" placeholder="How can we help you?" required></textarea>
+            </div>
+            <span asp-validation-for="Details" style="color:red;font-size:.9em;"></span>
+
+            <button type="submit" class="send-message-btn">Send Message</button>
+        </form>
+
+    </div>
+</section>

@@ -1,0 +1,92 @@
+
+
+.hero-section {
+    
+    background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('https://lh3.googleusercontent.com/aida-public/AB6AXuBPtqHUkrYE7MtqMi_kxkaJDaiQ-sgVkFqjJ7xIMFxH5NhVBgVsV3zW8h2As65R7sNTnvIrmatwCIfm7LzwozG8w0faQY_91effbhwoHgQoyqyUWjyfyq3VexNiOQQXlZ305c489OoYlgtDUbnC5f2Rqgg3P33reZsISgchuSlxqg4HuGUe4t-bn1ZNLKbwfscNp5z26j9UL6lEahOCdajoeq6K_b20sjYJSlCRlu3SyqbaIxHgNFsfmkCZj3CCuLKkNzEYEnXeWcfn');
+    background-size: cover;       
+    background-position: center;  
+    background-repeat: no-repeat;
+    height: 85vh;                 
+    display: flex;
+    align-items: center;        
+}
+
+.hero-container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;         
+}
+
+.hero-content {
+    max-width: 550px;          
+    color: #ffffff;            
+}
+
+.hero-content h1 {
+    font-size: 48px;          
+    font-weight: 700;
+    line-height: 1.2;           
+    margin-bottom: 20px;       
+}
+
+.hero-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 30px;    
+    color: #e0e0e0;              
+}
+
+
+.hero-btn {
+    display: inline-flex;
+    align-items: center;
+    background-color: #ff7a00;   
+    color: #ffffff;
+    padding: 14px 28px;         
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;         
+    transition: 0.3s ease;      
+}
+
+
+.hero-btn i {
+    margin-left: 10px;           
+    transition: 0.2s;
+}
+
+
+.hero-btn:hover {
+    background-color: #e06c00;   
+}
+
+.hero-btn:hover i {
+    transform: translateX(4px);  
+}
+
+
+@media (max-width: 768px) {
+    .hero-section {
+        height: 70vh;           
+    }
+
+    .hero-content {
+        max-width: 100%;       
+        text-align: center;     
+    }
+
+    .hero-content h1 {
+        font-size: 32px;         
+        margin-bottom: 15px;
+    }
+
+    .hero-content p {
+        font-size: 15px;
+        margin-bottom: 25px;
+    }
+    
+    .hero-btn {
+        padding: 12px 24px;      
+        font-size: 15px;
+    }
+}

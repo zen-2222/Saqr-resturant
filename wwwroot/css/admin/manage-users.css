@@ -1,0 +1,168 @@
+.dashboard-section {
+    min-height: calc(100vh - 70px);
+    background-color: #f8f9fa;
+    padding: 40px 20px;
+}
+
+.dashboard-container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.dashboard-header {
+    margin-bottom: 30px;
+}
+
+.dashboard-header h2 {
+    color: #222222;
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.dashboard-header p {
+    color: #777777;
+    font-size: 14px;
+}
+
+.table-wrapper {
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: 1px solid #eef0f2;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+    overflow-x: auto;
+}
+
+.users-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 14px;
+}
+
+.users-table th {
+    background-color: #fafbfc;
+    color: #444444;
+    font-weight: 600;
+    padding: 16px 20px;
+    border-bottom: 1px solid #eef0f2;
+}
+
+.users-table td {
+    padding: 16px 20px;
+    border-bottom: 1px solid #f6f8f9;
+    color: #333333;
+    vertical-align: middle;
+}
+
+.user-id {
+    font-weight: 700;
+    color: #8b4513;
+}
+
+.user-name {
+    font-weight: 600;
+    color: #111111;
+}
+
+.user-email {
+    color: #555555;
+}
+
+.role-form {
+    margin: 0;
+    padding: 0;
+}
+
+.role-select {
+    padding: 6px 28px 6px 12px;
+    font-size: 13px;
+    font-weight: 700;
+    border-radius: 20px;
+    cursor: pointer;
+    outline: none;
+    transition: 0.2s ease;
+    appearance: none;
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    text-transform: uppercase;
+    width: 130px;
+}
+
+.role-select.admin-select {
+    background-color: #ffebee;
+    color: #c62828;
+    border: 1px solid #ffcdd2;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23c62828' viewBox='0 0 24 24'><path d='M7 10l5 5 5-5z'/></svg>");
+}
+
+.role-select.delivery-select {
+    background-color: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeeba;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23856404' viewBox='0 0 24 24'><path d='M7 10l5 5 5-5z'/></svg>");
+}
+
+.role-select.user-select {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    border: 1px solid #c8e6c9;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%232e7d32' viewBox='0 0 24 24'><path d='M7 10l5 5 5-5z'/></svg>");
+}
+
+.table-actions-group {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.inline-form {
+    margin: 0;
+    padding: 0;
+    display: inline;
+}
+
+.action-btn {
+    padding: 6px 12px;
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: 0.2s ease;
+    text-decoration: none;
+    border: 1px solid transparent;
+}
+
+.pass-btn {
+    background-color: #f0f4f8;
+    color: #1a56db;
+    border-color: #d1e2ff;
+}
+
+.pass-btn:hover {
+    background-color: #1a56db;
+    color: #ffffff;
+    border-color: #1a56db;
+}
+
+.delete-btn {
+    background-color: #fff5f5;
+    color: #e53e3e;
+    border-color: #fed7d7;
+}
+
+.delete-btn:hover {
+    background-color: #e53e3e;
+    color: #ffffff;
+    border-color: #e53e3e;
+}
+
+@media (max-width: 768px) {
+    .dashboard-header {
+        text-align: center;
+    }
+}

@@ -1,0 +1,133 @@
+
+.about-section {
+    padding: 80px 0;
+    background-color: #ffffff; 
+    overflow: hidden;
+}
+
+.about-container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;       
+    justify-content: space-between;
+    gap: 50px;                
+}
+
+
+.about-image-side {
+    flex: 1;
+    max-width: 500px;
+}
+
+.image-wrapper {
+    position: relative;        
+    padding-bottom: 20px;      
+}
+
+
+.deco-box {
+    position: absolute;
+    bottom: 0;
+    right: -15px;            
+    width: 160px;
+    height: 160px;
+    background-color: #f7e6d5;
+    border-radius: 16px;
+    z-index: 1;             
+}
+
+
+.chef-img {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;     
+    position: relative;
+    z-index: 2;              
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); 
+}
+
+
+.about-text-side {
+    flex: 1;
+    max-width: 550px;
+}
+
+.about-text-side .sub-title {
+    display: block;
+    color: var(--primary-accent);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.about-text-side .main-title {
+    color: var(--text-main);
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    line-height: 1.2;
+}
+
+.about-p {
+    color: var(--text-muted);
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 20px;      
+}
+
+
+.stats-container {
+    display: flex;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.stat-box h3 {
+    color: var(--primary-accent); 
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.stat-box p {
+    color: var(--text-muted);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column; 
+        text-align: center;   
+        gap: 40px;
+    }
+
+    .about-image-side, .about-text-side {
+        max-width: 100%;      
+    }
+
+    .image-wrapper {
+        display: inline-block; 
+        max-width: 90%;
+    }
+
+    .deco-box {
+        right: -10px;          
+        width: 120px;
+        height: 120px;
+    }
+
+    .about-text-side .main-title {
+        font-size: 28px;
+    }
+
+    .stats-container {
+        justify-content: center; 
+        gap: 50px;
+    }
+}
