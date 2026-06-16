@@ -85,5 +85,6 @@ wwwroot\uploads\Desserts\Cheesecake\cheese.jpg
 wwwroot\uploads\Desserts\Chocolate Cake\ccake.jpg
 wwwroot\uploads\Drinks\Cola\cola.jpg
 wwwroot\uploads\Drinks\Iced Coffee\iced.jpg
+wwwroot\uploads\logo.png
 wwwroot\uploads\Pizza\Seafood Pizza\seafood pizza.jpg
 wwwroot\uploads\Pizza\Supreme Pizza\supreme.jpg
